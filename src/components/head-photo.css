@@ -1,0 +1,53 @@
+.Head {
+  /* border: 1px solid green; */
+  position: relative;
+  top: 90px;
+  width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  justify-items: left;
+}
+
+.HeadPhoto {
+  position: relative;
+  /* border: 1px solid green; */
+  width: 798px;
+  overflow: hidden;
+}
+
+.HeadPhoto-Container {
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.HeadPhoto-Container img {
+  box-shadow: inset 0px 10px 50px 0px #333333;
+  /* mix-blend-mode: darken; */
+}
+
+/* .Left {
+    left: 8px;
+}
+
+.Right {
+    right: 8px;
+} */
+
+.Dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 20px);
+}
+
+.HeadButton {
+    position: absolute;
+    bottom: 60px;
+    left: 160px;
+}

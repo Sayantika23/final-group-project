@@ -1,0 +1,35 @@
+.Score {
+    position: relative;
+    top: 70px;
+    width: 1200px;
+    margin: auto;
+  }
+
+.Score1 {
+  /* border: 1px solid green; */
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  background-color: white;
+}
+
+.Score-Container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.Left {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20px;
+}
+
+.Right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+}
