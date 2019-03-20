@@ -16,4 +16,16 @@ code {
 a {
   text-decoration: none;
   color: #f1e9e6;
+  cursor: pointer;
+}
+
+button {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  color: white;
 }

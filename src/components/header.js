@@ -1,8 +1,23 @@
 import React from "react";
 import "./header.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Search from "./search";
 
 export default class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuClicked: false
+    };
+    this.clicked = this.clicked.bind(this);
+  }
+
+  clicked() {
+    this.setState({
+      menuClicked: !this.state.menuClicked
+    });
+  }
+
   render() {
     return (
       <div className="Header">
@@ -38,10 +53,11 @@ export default class Header extends React.Component {
           </div>
           <div className="Menu">
             <div className="Menu1">
-              <h1>WATCH</h1>
+              <h1>LIVE</h1>
               <img src={require("../photos/chevron-down.png")} />
             </div>
             <div className="DropDown">
+              <a href="#">Scores</a>
               <a href="https://tv.ittf.com/">ITTV</a>
               <a href="#">Broadcast</a>
             </div>
@@ -67,11 +83,14 @@ export default class Header extends React.Component {
               <h1>中文</h1>
             </div>
           </a>
-          <img src={require("../photos/search.svg.png")} />
+          <button onClick={this.clicked}>
+            <img src={require("../photos/search.svg.png")} />
+          </button>
           <div className="Menu">
             <h1>SIGN UP/LOG IN</h1>
           </div>
         </div>
+        {this.state.menuClicked ? <Search exit={this.clicked.bind(this)} /> : null}
       </div>
     );
   }
