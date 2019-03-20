@@ -31,6 +31,7 @@
 
 .social {
     margin-right: 120px;
+    background-color: white;
 }
 
 .fb-post {
@@ -40,7 +41,7 @@
 
 .socialLink{
     position: relative;
-    top: 100px;
+    top: 150px;
 }
 
 #socials {

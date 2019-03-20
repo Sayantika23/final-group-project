@@ -1,0 +1,15 @@
+.Sponsor {
+  position: relative;
+  top: 400px;
+  width: 1200px;
+  margin: auto;
+}
+
+.SponsorContainer {
+  position: relative;
+  top: 50px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

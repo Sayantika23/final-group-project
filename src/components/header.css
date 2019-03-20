@@ -40,7 +40,7 @@
   height: 70px;
 }
 
-.Menu {
+.Menu1 {
   -webkit-text-fill-color: #f1e9e6;
   font-family: "Calibri-Bold", "Calibri", serif;
   font-size: 16px;
@@ -52,15 +52,47 @@
 }
 
 .Menu h1 {
-    -webkit-text-fill-color: #f1e9e6;
-    font-family: "Calibri-Bold", "Calibri", serif;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    line-height: 1.2;  
+  -webkit-text-fill-color: #f1e9e6;
+  font-family: "Calibri-Bold", "Calibri", serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.Menu h1:hover {
+  -webkit-text-fill-color: #d19433;
+  cursor: pointer;
 }
 
 .Menu img {
-    position: relative;
-    top: 10px;
+  position: relative;
+  top: 10px;
+}
+
+.DropDown {
+  /* border: 1px solid green; */
+  position: absolute;
+  background-color: #215344;
+  min-width: 100px;
+  max-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  display: none;
+}
+
+.Menu:hover .DropDown {
+  display: block;
+}
+
+.DropDown a {
+  padding: 15px 5px;
+  display: block;
+  font-size: 16px;
+  /* font-weight: bold; */
+  border-bottom: 1px solid #f1e9e6;
+}
+
+.DropDown a:hover {
+  -webkit-text-fill-color: #d19433;
+  cursor: pointer;
 }
