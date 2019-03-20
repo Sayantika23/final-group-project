@@ -36,7 +36,7 @@ export default class Header extends React.Component {
               <img src={require("../photos/chevron-down.png")} />
             </div>
             <div className="DropDown">
-              <a href="#">World Championships</a>
+              <a href="https://world-championships.netlify.com/">World Championships</a>
               <a href="#">Upcoming</a>
               <a href="https://www.ittf.com/tournaments/">Calender</a>
             </div>

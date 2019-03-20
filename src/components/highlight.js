@@ -6,7 +6,7 @@ export default class Highlight extends React.Component {
     return (
       <div className="Highlight">
         <div className="News">
-          <a href="https://www.ittf.com/tournament/5000/2019-world-championships/"><img src={require("../photos/word-championship-2019.png")} /></a>
+          <a href="https://world-championships.netlify.com/"><img src={require("../photos/word-championship-2019.png")} /></a>
           <div className="NewsContainer">
             <img src={require("../photos/Frame2.png")} />
             <img src={require("../photos/Frame2.png")} />
