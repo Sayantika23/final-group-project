@@ -63,9 +63,10 @@ export default class Header extends React.Component {
             </div>
           </div>
           <div className="Menu">
-            <a href="https://wttc2019.jegy.hu/programseries/liebherr-2019-ittf-asztalitenisz-vilagbajnoksag-11/">
-              <h1>TICKETS</h1>
-            </a>
+            {/* <a href="https://wttc2019.jegy.hu/programseries/liebherr-2019-ittf-asztalitenisz-vilagbajnoksag-11/"> */}
+            <Link to="/tickets"><h1>TICKETS</h1></Link>
+              
+            {/* </a> */}
           </div>
           <div className="Menu">
             <h1>STORE</h1>
