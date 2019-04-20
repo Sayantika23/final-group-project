@@ -24,9 +24,9 @@ export default class Main extends React.Component {
           width="1200"
           height="604"
           src="https://www.youtube.com/embed/R4C-W0KkZrE"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         />
         <MoreNews />
         <Sponsor />

@@ -3,25 +3,23 @@ import "./header.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Search from "./search";
 
+import sessionManager from '../commons/session-manager';
+
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuClicked: false
+      menuClicked: false,
+      session: null
     };
     this.clicked = this.clicked.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   componentWillMount() {
-    fetch('https://people.rit.edu/sxb2606/646/group-project2/Final_Group_Project_Backend/login.api.php')
-            .then(res => res.json())
-            .then(status => {
-                if (status.isLoggedIn) {
-                    this.setState({
-                        status: status
-                    });
-                }
-            });
+    this.setState({
+      session: sessionManager.getSession()
+    });
   }
 
   clicked() {
@@ -30,22 +28,33 @@ export default class Header extends React.Component {
     });
   }
 
-  loggedInStatus() {
-    if(this.state.isLoggedIn) {
-      return <h1 style={{background: '#9C0', fontSize: '48px'}}>LOGGEDDD IN</h1>;
-    }
+  logout() {
+    sessionManager.logout();
 
-    else {
-      return <h1 style={{background: '#9C0', fontSize: '48px'}}>NOT LOGGEDDD IN</h1>;
-    }
+    this.setState({
+      session: {}
+    });
   }
-  
+
   render() {
+    const userStatus = (this.state.session && this.state.session.userId ?
+      (
+        <div>
+          <Link to="/shoppingCart">
+            <img className="shopping-cart" src={require('../photos/shopping-cart.svg')} alt="Shopping Cart Icon" />
+          </Link>
+          <h1 style={{display: 'inline-block'}}>Welcome, {this.state.session.username}</h1>
+          <button onClick={this.logout}>Logout</button>
+        </div>
+      ) :
+      <a href="/login">
+        <h1>LOG IN</h1>
+      </a>
+    );
     return (
       <div className="Header">
-        {this.loggedInStatus()}
-        <Link to="/" onClick="window.location.reload()">
-          <img className="Logo" src={require("../photos/logo.png")} />
+        <Link to="/">
+          <img onClick={window.location.reload} className="Logo" src={require("../photos/logo.png")} />
         </Link>
         <div className="Main-Nav">
           <div className="Menu">
@@ -88,11 +97,13 @@ export default class Header extends React.Component {
           <div className="Menu">
             {/* <a href="https://wttc2019.jegy.hu/programseries/liebherr-2019-ittf-asztalitenisz-vilagbajnoksag-11/"> */}
             <Link to="/tickets"><h1>TICKETS</h1></Link>
-              
+
             {/* </a> */}
           </div>
           <div className="Menu">
-            <h1>STORE</h1>
+            <Link to="/store">
+              <h1>STORE</h1>
+            </Link>
           </div>
           <div className="Menu">
             <div className="Menu1">
@@ -102,18 +113,13 @@ export default class Header extends React.Component {
           </div>
         </div>
         <div className="Side-Nav">
-          <a href="https://cn.ittf.com/">
-            <div className="Menu">
-              <h1>中文</h1>
-            </div>
-          </a>
+          {/*
           <button onClick={this.clicked}>
             <img src={require("../photos/search.svg.png")} />
           </button>
+          */}
           <div className="Menu">
-            <Link to="/login">
-            <h1>SIGN UP/LOG IN</h1>
-            </Link>
+            {userStatus}
           </div>
         </div>
         {this.state.menuClicked ? <Search exit={this.clicked.bind(this)} /> : null}

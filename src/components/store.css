@@ -1,0 +1,54 @@
+.store-page {
+    margin-top: 80px;
+}
+
+.store-page .container {
+    width: 90%;
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.card {
+    display: inline-block;
+    border: 1px solid lightgray;
+    width: 25%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.card h3,
+.card h4,
+.card p {
+    margin: 0;
+}
+
+.card .thumbnail img {
+    height: 100px;
+}
+
+.card form {
+    display: inline-block;
+}
+
+.card button {
+    background: #9C0;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+        margin: 10px;
+    }
+}
+
+.store-page .message {
+    padding: 10px;
+    border: 1px solid green;
+    background: lawngreen;
+}

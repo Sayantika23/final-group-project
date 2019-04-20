@@ -1,0 +1,16 @@
+.shopping-cart-page .container {
+    width: 90%;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.shopping-cart-page table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.shopping-cart-page table td,
+.shopping-cart-page table th {
+    padding: 10px;
+    text-align: left;
+}

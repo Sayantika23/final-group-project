@@ -97,3 +97,10 @@
   -webkit-text-fill-color: #d19433;
   cursor: pointer;
 }
+
+img.shopping-cart {
+  width: 24px;
+  margin-right: 10px;
+  color: white;
+  background: white;
+}

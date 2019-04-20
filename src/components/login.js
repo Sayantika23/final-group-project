@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom';
+import sessionManager from '../commons/session-manager';
+
+import Header from './header';
+import Footer from './footer';
+
+import './login.css';
 
 export default class Login extends Component {
     constructor(props) {
@@ -30,19 +36,23 @@ export default class Login extends Component {
         .then(res => res.json())
         .then(status => {
             console.log('Received Status from Server', status);
-        })
+            sessionManager.setSession(status);
+            this.setState({
+                status: {
+                    isLoggedIn: true
+                }
+            });
+        });
     }
 
     componentWillMount() {
-        fetch('https://people.rit.edu/sxb2606/646/group-project2/Final_Group_Project_Backend/login.api.php')
-            .then(res => res.json())
-            .then(status => {
-                if (status.isLoggedIn) {
-                    this.setState({
-                        status: status
-                    });
+        if(sessionManager.isLoggedIn()) {
+            this.setState({
+                status: {
+                    isLoggedIn: true
                 }
             });
+        }
     }
 
     renderRedirect() {
@@ -60,7 +70,8 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div>
+            <div className="login-page">
+                <Header />
                 {this.renderRedirect()}
                 <h1>Login</h1>
 
@@ -81,6 +92,7 @@ export default class Login extends Component {
 
                     <button type="submit">Login</button>
                 </form>
+                <Footer />
             </div>
         )
     }
