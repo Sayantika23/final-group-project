@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import Tickets from "./components/tickets";
+import Login from "./components/login";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -11,6 +12,7 @@ const routing = (
     <div>
       <Route exact path="/" component={App} />
       <Route path="/tickets" component={Tickets} />
+      <Route path="/login" component={Login} />
     </div>
   </Router>
 );

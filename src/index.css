@@ -20,12 +20,12 @@ a {
 }
 
 button {
-  outline: none;
-  background-color: transparent;
-  border: none;
+  /*outline: none;*/
+  /*background-color: transparent;*/
+  /*border: none;*/
   cursor: pointer;
 }
 
 input[type="text"] {
-  color: white;
+  /*color: white;*/
 }

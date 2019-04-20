@@ -12,15 +12,38 @@ export default class Header extends React.Component {
     this.clicked = this.clicked.bind(this);
   }
 
+  componentWillMount() {
+    fetch('https://people.rit.edu/sxb2606/646/group-project2/Final_Group_Project_Backend/login.api.php')
+            .then(res => res.json())
+            .then(status => {
+                if (status.isLoggedIn) {
+                    this.setState({
+                        status: status
+                    });
+                }
+            });
+  }
+
   clicked() {
     this.setState({
       menuClicked: !this.state.menuClicked
     });
   }
 
+  loggedInStatus() {
+    if(this.state.isLoggedIn) {
+      return <h1 style={{background: '#9C0', fontSize: '48px'}}>LOGGEDDD IN</h1>;
+    }
+
+    else {
+      return <h1 style={{background: '#9C0', fontSize: '48px'}}>NOT LOGGEDDD IN</h1>;
+    }
+  }
+  
   render() {
     return (
       <div className="Header">
+        {this.loggedInStatus()}
         <Link to="/" onClick="window.location.reload()">
           <img className="Logo" src={require("../photos/logo.png")} />
         </Link>
@@ -88,7 +111,9 @@ export default class Header extends React.Component {
             <img src={require("../photos/search.svg.png")} />
           </button>
           <div className="Menu">
+            <Link to="/login">
             <h1>SIGN UP/LOG IN</h1>
+            </Link>
           </div>
         </div>
         {this.state.menuClicked ? <Search exit={this.clicked.bind(this)} /> : null}

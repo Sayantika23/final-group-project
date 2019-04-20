@@ -13,7 +13,7 @@
     background-color: #215344;
 }
 
-input[type="text"] {
+.SearchContainer input[type="text"] {
     width: 80%;
     font-size: 36px;
     position: absolute;
@@ -27,7 +27,7 @@ input[type="text"] {
     -webkit-text-fill-color: white;
   }
   
-  input[type="image"] {
+  .SearchContainer input[type="image"] {
     position: absolute;
     right: 10%;
     top: 50%;
