@@ -15,6 +15,14 @@ export default class ShoppingCart extends Component {
             shoppingCart: []
         };
     }
+
+    componentDidMount() {
+        if (!sessionManager.isLoggedIn()) {
+            console.log('User not logged in', 'Redirecting . . .');
+            window.location.href = '/login';
+        }
+    }
+
     componentWillMount() {
         fetch('https://people.rit.edu/sxb2606/646/group-project2/Final_Group_Project_Backend/shoppingCart.api.php?userId=' + sessionManager.getSession().userId)
             .then(res => res.json())

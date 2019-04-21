@@ -1,6 +1,28 @@
+.login-page {
+    margin-top: 80px;
+}
+
 .login-page form {
     width: 300px;
     margin: auto;
+}
+
+.login-page .hint {
+    width: 300px;
+    margin: auto;
+
+    border: 1px solid #999;
+    background: #F0F0F0;
+    border-radius: 5px;
+
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-page .hint span {
+    font-family: 'Consolas';
+    font-weight: bold;
 }
 
 .login-page form input {

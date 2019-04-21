@@ -34,6 +34,8 @@ export default class Header extends React.Component {
     this.setState({
       session: {}
     });
+
+    window.location.href = '/login';
   }
 
   render() {
@@ -43,7 +45,7 @@ export default class Header extends React.Component {
           <Link to="/shoppingCart">
             <img className="shopping-cart" src={require('../photos/shopping-cart.svg')} alt="Shopping Cart Icon" />
           </Link>
-          <h1 style={{display: 'inline-block'}}>Welcome, {this.state.session.username}</h1>
+          <h1 style={{ display: 'inline-block' }}>Welcome, {this.state.session.username}</h1>
           <button onClick={this.logout}>Logout</button>
         </div>
       ) :

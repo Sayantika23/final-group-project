@@ -30,6 +30,13 @@ export default class Store extends Component {
         }
     }
 
+    componentDidMount() {
+        if (!sessionManager.isLoggedIn()) {
+            console.log('User not logged in', 'Redirecting . . .');
+            window.location.href = '/login';
+        }
+    }
+
     addToCart(e, product) {
         console.log('Adding product to cart', product);
 
@@ -53,7 +60,7 @@ export default class Store extends Component {
             return (
                 <div className="card" key={product.id}>
                     <div className="thumbnail">
-                        <img src="https://place-hold.it/300 alt=" />
+                        <img src={product.imageUrl} alt="" />
                     </div>
                     <h3>{product.name}</h3>
                     <h4>${product.price}</h4>

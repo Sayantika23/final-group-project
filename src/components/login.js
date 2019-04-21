@@ -73,7 +73,10 @@ export default class Login extends Component {
             <div className="login-page">
                 <Header />
                 {this.renderRedirect()}
-                <h1>Login</h1>
+
+                <div className="hint">
+                    <p>Try Username <span>jghidiu</span> and password <span>p@ssw0rd</span></p>
+                </div>
 
                 <form onSubmit={this.login}>
                     <div style={{position: "relative"}}>

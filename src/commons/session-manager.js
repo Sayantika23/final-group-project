@@ -15,12 +15,12 @@ class SessionManager {
         return this.session;
     }
 
-    logout() {
-        window.localStorage.clear();
+    isLoggedIn() {
+        return this.getSession() && this.getSession().userId;
     }
 
-    isLoggedIn() {
-        return !!this.session;
+    logout() {
+        window.localStorage.clear();
     }
 }
 
