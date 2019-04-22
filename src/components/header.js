@@ -87,11 +87,11 @@ export default class Header extends React.Component {
           </div> */}
           <div className="Menu">
             <div className="Menu1">
-              <h1>LIVE</h1>
-              <img src={require("../photos/chevron-down.png")} />
-            </div>
-            <div className="DropDown">
-            <Link to="/App1"><h1>Live</h1></Link>
+              {/* <h1>LIVE</h1> */}
+              {/* <img src={require("../photos/chevron-down.png")} /> */}
+            {/* </div> */}
+            {/* <div className="DropDown"> */}
+            <Link to="/App1"><h1>LIVE</h1></Link>
               {/* <a href="#">Scores</a>
               <a href="https://tv.ittf.com/">ITTV</a>
               <a href="#">Broadcast</a> */}

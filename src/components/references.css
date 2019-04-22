@@ -10,3 +10,7 @@
     background-color: #215344;
     overflow: visible;
 }
+
+.List-style a {
+    color: darkgreen;
+}
