@@ -59,12 +59,12 @@ export default class Header extends React.Component {
           <img onClick={window.location.reload} className="Logo" src={require("../photos/logo.png")} />
         </Link>
         <div className="Main-Nav">
-          <div className="Menu">
+          {/* <div className="Menu">
             <a href="https://www.ittf.com/news/">
               <h1>NEWS</h1>
             </a>
-          </div>
-          <div className="Menu">
+          </div> */}
+          {/* <div className="Menu">
             <div className="Menu1">
               <h1>TOURNAMENTS</h1>
               <img src={require("../photos/chevron-down.png")} />
@@ -73,9 +73,9 @@ export default class Header extends React.Component {
               <a href="https://world-championships.netlify.com/">World Championships</a>
               <a href="#">Upcoming</a>
               <a href="https://www.ittf.com/tournaments/">Calender</a>
-            </div>
-          </div>
-          <div className="Menu">
+            </div> 
+          </div> */}
+          {/* <div className="Menu">
             <div className="Menu1">
               <h1>PLAYERS</h1>
               <img src={require("../photos/chevron-down.png")} />
@@ -84,16 +84,17 @@ export default class Header extends React.Component {
               <a href="https://www.ittf.com/rankings/">Ranking</a>
               <a href="http://results.ittf.link/">Stat</a>
             </div>
-          </div>
+          </div> */}
           <div className="Menu">
             <div className="Menu1">
               <h1>LIVE</h1>
               <img src={require("../photos/chevron-down.png")} />
             </div>
             <div className="DropDown">
-              <a href="#">Scores</a>
+            <Link to="/App1"><h1>Live</h1></Link>
+              {/* <a href="#">Scores</a>
               <a href="https://tv.ittf.com/">ITTV</a>
-              <a href="#">Broadcast</a>
+              <a href="#">Broadcast</a> */}
             </div>
           </div>
           <div className="Menu">
@@ -109,8 +110,9 @@ export default class Header extends React.Component {
           </div>
           <div className="Menu">
             <div className="Menu1">
-              <h1>MORE</h1>
-              <img src={require("../photos/chevron-down.png")} />
+            <Link to="/references">
+              <h1>REFERENCES</h1>
+            </Link>
             </div>
           </div>
         </div>

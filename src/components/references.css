@@ -1,0 +1,12 @@
+.References h1 {
+    text-align: center;
+}
+
+.References .Footer {
+    position: relative;
+    top: 350px;
+    width: 100%;
+    height: 120px;
+    background-color: #215344;
+    overflow: visible;
+}
